@@ -6,7 +6,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBaGcXB2r9fy7iG4To-ZsB23fXxHXCTIpY",
+  apiKey: "xxxxzxzzzzzzxz",
   authDomain: "carddigitizer.firebaseapp.com",
   projectId: "carddigitizer",
   storageBucket: "carddigitizer.appspot.com",
