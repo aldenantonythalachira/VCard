@@ -6,20 +6,20 @@ import { ProtectedRoute } from './components/auth/ProtectedRoute'
 import { PublicRoute } from './components/auth/PublicRoute'
 
 // Auth Pages
-import LoginScreen from './screens/LoginScreen'
-import RegisterScreen from './screens/RegisterScreen'
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen'
+import LoginScreen from '../screens/LoginScreen.js'
+import RegisterScreen from '../screens/RegisterScreen.js'
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen.js'
 
 // Main App Pages
 import DashboardLayout from './components/layout/DashboardLayout'
-import MyCardsScreen from './screens/MyCardsScreen'
-import ContactsScreen from './screens/ContactsScreen'
-import SettingsScreen from './screens/SettingsScreen'
-import AddBusinessCardScreen from './screens/AddBusinessCardScreen'
-import EditBusinessCardScreen from './screens/EditBusinessCardScreen'
-import BusinessCardScreen from './screens/BusinessCardScreen'
-import QRScannerScreen from './screens/QRScannerScreen'
-import ArchivedCardsScreen from './screens/ArchivedCardsScreen'
+import MyCardsScreen from '../screens/MyCardsScreen.js'
+import ContactsScreen from '../screens/ContactsScreen.js'
+import SettingsScreen from '../screens/SettingsScreen.js'
+import AddBusinessCardScreen from '../screens/AddBusinessCardScreen.js'
+import EditBusinessCardScreen from '../screens/EditBusinessCardScreen.js'
+import BusinessCardScreen from '../screens/BusinessCardScreen.js'
+import QRScannerScreen from '../screens/QRScannerScreen.js'
+import ArchivedCardsScreen from '../screens/ArchivedCardsScreen.js'
 
 function App() {
   return (
