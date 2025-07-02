@@ -1,38 +1,41 @@
 {
-  "name": "vcard-nextjs",
-  "version": "0.1.0",
+  "name": "vcard-react-spa",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "next": "14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
     "firebase": "^10.7.1",
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.16.16",
     "react-hook-form": "^7.48.2",
     "react-hot-toast": "^2.4.1",
     "qrcode": "^1.5.3",
     "html5-qrcode": "^2.3.8",
+    "lucide-react": "^0.294.0",
+    "clsx": "^2.0.0",
+    "@headlessui/react": "^1.7.17"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/qrcode": "^1.5.5",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
     "tailwindcss": "^3.3.6",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
-    "clsx": "^2.0.0",
-    "lucide-react": "^0.294.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.3.3",
-    "@types/node": "^20.10.4",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "@types/qrcode": "^1.5.5",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "14.0.4"
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5"
   }
 }

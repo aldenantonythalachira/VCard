@@ -3,13 +3,13 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "vcard-demo.firebaseapp.com",
-  projectId: "vcard-demo",
-  storageBucket: "vcard-demo.appspot.com",
-  messagingSenderId: "123456789012",
-  appId: "1:123456789012:web:abcdefghijklmnopqrstuvwxyz",
-  measurementId: "G-XXXXXXXXXX"
+  apiKey: "xxxxzxzzzzzzxz",
+  authDomain: "carddigitizer.firebaseapp.com",
+  projectId: "carddigitizer",
+  storageBucket: "carddigitizer.appspot.com",
+  messagingSenderId: "262080489558",
+  appId: "1:262080489558:web:eb86d7262bb44437e5f3f7",
+  measurementId: "G-E1EPLGJ5M1"
 }
 
 let app
