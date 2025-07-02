@@ -3,13 +3,13 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "xxxxzxzzzzzzxz",
-  authDomain: "carddigitizer.firebaseapp.com",
-  projectId: "carddigitizer",
-  storageBucket: "carddigitizer.appspot.com",
-  messagingSenderId: "262080489558",
-  appId: "1:262080489558:web:eb86d7262bb44437e5f3f7",
-  measurementId: "G-E1EPLGJ5M1"
+  apiKey: "AIzaSyDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  authDomain: "vcard-demo.firebaseapp.com",
+  projectId: "vcard-demo",
+  storageBucket: "vcard-demo.appspot.com",
+  messagingSenderId: "123456789012",
+  appId: "1:123456789012:web:abcdefghijklmnopqrstuvwxyz",
+  measurementId: "G-XXXXXXXXXX"
 }
 
 let app
@@ -74,7 +74,23 @@ export const subscribeToBusinessCards = (userEmail: string, callback: (cards: Bu
 }
 
 export const addContact = async (userEmail: string, donorEmail: string, donorCardId: string) => {
-  await addDoc(collection(db, `${userEmail}/contacts/details`), {
+  // Check if contact already exists
+  const contactsRef = collection(db, `${userEmail}/contacts/details`)
+  const querySnapshot = await getDocs(contactsRef)
+  
+  let cardExists = false
+  querySnapshot.forEach((doc) => {
+    const contact = doc.data()
+    if (contact.donorCardID === donorCardId) {
+      cardExists = true
+    }
+  })
+
+  if (cardExists) {
+    throw new Error('Contact already exists')
+  }
+
+  await addDoc(contactsRef, {
     donorEmail,
     donorCardID: donorCardId,
   })

@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, Globe, MapPin, MessageCircle, Linkedin, Twitter, Facebook, Instagram, User } from 'lucide-react'
 import { BusinessCard } from '@/types'
-import QRCode from 'qrcode'
 
 interface BusinessCardPreviewProps {
   card: BusinessCard
@@ -16,6 +15,8 @@ export default function BusinessCardPreview({ card }: BusinessCardPreviewProps) 
   useEffect(() => {
     const generateQRCode = async () => {
       try {
+        // Import QRCode dynamically to avoid SSR issues
+        const QRCode = (await import('qrcode')).default
         const cardInfo = `thalachira,${card.id},${card.name},${card.status},${card.role},${card.profileURL || ''},${card.twitterURL || ''},${card.instagramURL || ''},${card.facebookURL || ''},${card.linkedinURL || ''},${card.mobile},${card.whatsapp || ''},${card.email},${card.company},${card.officeAddress},${card.companyWebsite},${card.status}`
         const url = await QRCode.toDataURL(cardInfo, {
           width: 200,
@@ -49,7 +50,8 @@ export default function BusinessCardPreview({ card }: BusinessCardPreviewProps) 
   }
 
   const handleWhatsAppClick = (phone: string) => {
-    window.open(`https://wa.me/${phone.replace('+', '')}`, '_blank', 'noopener,noreferrer')
+    const cleanPhone = phone.replace(/[^\d+]/g, '')
+    window.open(`https://wa.me/${cleanPhone.replace('+', '')}`, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -60,7 +62,7 @@ export default function BusinessCardPreview({ card }: BusinessCardPreviewProps) 
     >
       {/* Desktop Card View */}
       <div className="hidden lg:block">
-        <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 text-black shadow-2xl transform rotate-0 hover:rotate-1 transition-transform duration-300">
+        <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 text-black shadow-2xl transform hover:scale-105 transition-transform duration-300">
           <div className="grid grid-cols-3 gap-8 h-96">
             {/* Left Column */}
             <div className="space-y-4">
